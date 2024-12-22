@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.3'
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'co2123'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // CSV handling library
+    implementation 'org.apache.commons:commons-csv:1.10.0' // Latest stable version for CSV operations
+
+    // Spring Boot web and JPA dependencies
+    implementation 'org.springframework.boot:spring-boot-starter-web' // For building web applications
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // For database operations using JPA
+
+    // Embedded Tomcat server with JSP support
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.28' // Provides JSP and Servlet support
+
+    // Jakarta Standard Tag Library (JSTL) dependencies
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0' // API for JSTL
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0' // Implementation of JSTL
+
+    runtimeOnly 'mysql:mysql-connector-java:8.0.33' // JDBC driver for MySQL
+
+    // Spring Boot development tools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools' // Enables live reload and development enhancements
+
+    // Testing dependencies
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // Testing utilities and libraries for Spring Boot
+}
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
