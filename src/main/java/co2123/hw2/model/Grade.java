@@ -12,7 +12,7 @@ public class Grade {
     private int score;
 
     @ManyToOne
-    @JoinColumn(name = "pupil_address") // Foreign key for the Pupil entity
+    @JoinColumn
     private Pupil pupil;
 
     // Getters and Setters

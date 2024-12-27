@@ -1,4 +1,3 @@
-
 package co2123.hw2;
 
 import co2123.hw2.model.Grade;
@@ -67,7 +66,13 @@ public class Hw2Application {
             school2.setPupils(Arrays.asList(pupil2));
             school2.setRepresentative(pupil2);
 
+            // Update pupils with schools
+            pupil1.setSchools(Arrays.asList(school1));
+            pupil2.setSchools(Arrays.asList(school1, school2));
+
+            // Save schools and pupils
             schoolRepo.saveAll(Arrays.asList(school1, school2));
+            pupilRepo.saveAll(Arrays.asList(pupil1, pupil2));
         };
     }
 }

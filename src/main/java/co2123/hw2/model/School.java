@@ -16,7 +16,7 @@ public class School {
     private List<Pupil> pupils;
 
     @ManyToOne
-    @JoinColumn(name = "representative_address")
+    @JoinColumn
     private Pupil representative;
 
     public int getId() {
@@ -53,6 +53,7 @@ public class School {
 
     @Override
     public String toString() {
-        return "School{id=" + id + ", name='" + name + "', pupils=" + pupils + ", representative=" + representative + "}";
+        return "id=" + id + ", name='" + name + "', pupils=" + pupils + ", representative=" + representative;
     }
+
 }

@@ -21,7 +21,7 @@ public class Pupil {
     private List<Grade> grades;
 
     @OneToOne
-    @JoinColumn(name = "best_grade_identifier")
+    @JoinColumn
     private Grade best;
 
     public String getAddress() {
@@ -58,6 +58,6 @@ public class Pupil {
 
     @Override
     public String toString() {
-        return "Pupil{address='" + address + "', grades=" + grades + ", best=" + best + "}";
+        return "address='" + address + "', grades=" + grades + ", best=" + best;
     }
 }
